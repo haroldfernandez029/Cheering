@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Angelika Flores💗</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #ffd6e7, #e8d9ff);
+      overflow: hidden;
+    }
+
+    .card {
+      width: 90%;
+      max-width: 420px;
+      padding: 40px 25px;
+      text-align: center;
+      background: rgba(255,255,255,0.9);
+      border-radius: 30px;
+      box-shadow: 0 15px 40px rgba(150, 80, 130, 0.2);
+      animation: pop 1s ease;
+    }
+
+    .heart {
+      font-size: 60px;
+      animation: heartbeat 1.3s infinite;
+    }
+
+    h1 {
+      color: #ff5c93;
+      margin: 10px 0;
+      font-size: 32px;
+    }
+
+    h2 {
+      color: #8d6aa8;
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      color: #666;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .message {
+      margin: 25px 0;
+      padding: 18px;
+      border-radius: 20px;
+      background: #fff0f6;
+      color: #555;
+    }
+
+    button {
+      border: none;
+      padding: 14px 25px;
+      border-radius: 30px;
+      background: #ff6fa5;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(255, 105, 155, 0.3);
+    }
+
+    button:hover {
+      transform: scale(1.08);
+      background: #ff4f91;
+    }
+
+    #secret {
+      display: none;
+      margin-top: 20px;
+      color: #ff5c93;
+      font-weight: bold;
+      animation: fade 0.8s ease;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 25px;
+      animation: float 5s infinite ease-in-out;
+      opacity: 0.7;
+    }
+
+    .s1 { left: 10%; top: 20%; }
+    .s2 { right: 12%; top: 15%; animation-delay: 1s; }
+    .s3 { left: 15%; bottom: 15%; animation-delay: 2s; }
+    .s4 { right: 15%; bottom: 20%; animation-delay: 3s; }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    @keyframes pop {
+      from {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sparkle s1">✨</div>
+  <div class="sparkle s2">💗</div>
+  <div class="sparkle s3">🌸</div>
+  <div class="sparkle s4">⭐</div>
+
+  <div class="card">
+
+    <div class="heart">💗</div>
+
+    <h1>Angelika Flores</h1>
+
+    <h2>You can do it! 🌸</h2>
+
+    <div class="message">
+      <p>
+        Hey Angelika! 🥰
+      </p>
+
+      <p>
+        Whatever you're going through right now,
+        remember that you're stronger than you think.
+        Don't give up, okay? 💪✨
+      </p>
+
+      <p>
+        Take it one step at a time.
+        I believe in you! 🌷
+      </p>
+    </div>
+
+    <button onclick="cheer()">Click for a little surprise 💌</button>
+
+    <div id="secret">
+      🌟 ANGELIKA, YOU GOT THIS! 🌟<br><br>
+      Keep going. Keep smiling. Keep believing in yourself. 💗<br>
+      Someone is cheering for you! 🥰
+    </div>
+
+  </div>
+
+  <script>
+    function cheer() {
+      document.getElementById("secret").style.display = "block";
+
+      for (let i = 0; i < 20; i++) {
+        const heart = document.createElement("div");
+
+        heart.innerHTML = ["💗","💕","✨","🌸","💖"][
+          Math.floor(Math.random() * 5)
+        ];
+
+        heart.style.position = "fixed";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.bottom = "-20px";
+        heart.style.fontSize = "25px";
+        heart.style.transition = "3s ease-out";
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.style.transform =
+            `translateY(-${window.innerHeight + 100}px) rotate(360deg)`;
+          heart.style.opacity = "0";
+        }, 50);
+
+        setTimeout(() => heart.remove(), 3000);
+      }
+    }
+  </script>
+
+</body>
+</html>
